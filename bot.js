@@ -113,7 +113,7 @@ controller.hears(
             }
             if (menues.length > 0) {
                 bot.reply(message, {
-                    text: 'Takto vypadá aktuálna ponuka',
+                    text: 'Takto vyzerá aktuálna ponuka',
                     attachments: menues
                 });
             } else {

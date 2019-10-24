@@ -6,52 +6,20 @@ module.exports = {
     // Zdroje restauracii
     sources: {
         // identifikator restauracie 
-        kusokstastia: {
-            // nazov restauracie
-            name: 'Kúsok Šťastia',
-            // url pre parsovanie obsahu denneho menu
-            web: 'https://www.bistro.sk/kusok-stastia/',
-            // druh parsra
-            parser: 'parserBistro',
-            // pomocne premenne cas a polozky parsovania
-            timestamp: 0,
-            items: []
-        },
-        kazacok: {
-            name: 'Kazačok Pub',
-            web: 'https://www.bistro.sk/kazacok-pub/',
-            parser: 'parserBistro',
-            timestamp: 0,
-            items: []
-        },
-        smrekovakoliba: {
-            name: 'Smreková Koliba',
-            web: 'https://restauracie.sme.sk/restauracia/smrekovakoliba_6066-zilina_2737/denne-menu',
+        don_quijote: {
+            name: 'Don Quijote',
+            web: 'https://restauracie.sme.sk/restauracia/don-quijote_7436-nove-mesto_2653/denne-menu',
             parser: 'parserRestauracieSme',
             timestamp: 0,
             items: []
         },
-        vulcano: {
-            name: 'Vulcano',
-            web: 'https://restauracie.sme.sk/restauracia/vulcano_4536-zilina_2737/denne-menu',
+        svadby_a_kari: {
+            name: 'Svadby a Kari',
+            web: 'https://restauracie.sme.sk/restauracia/svadby-a-kari-americka_10343-nove-mesto_2653/denne-menu',
             parser: 'parserRestauracieSme',
             timestamp: 0,
             items: []
         },
-        milano: {
-            name: 'Pizza Milano',
-            web: 'https://www.bistro.sk/pizza-milano/',
-            parser: 'parserBistro',
-            timestamp: 0,
-            items: []
-        },
-        rmut: {
-            name: "Pivarska Bašta Rmut",
-            web: 'https://www.bistro.sk/pivarska-basta-rmut/',
-            parser: 'parserBistro',
-            timestamp: 0,
-            items: []
-        }
     },
 
     // ikonky pre hlasovanie (max 10)
@@ -100,7 +68,7 @@ module.exports = {
     // @todo "(aka je) ponuka pre kazacok"
     // @todo "(ake je) denne menu pre kazacok"
     "QUESTION_BY_RESTAURANT": [
-        "(?=[cč]o.*(?=hraj[úu]|maj[úu]|d[aá]vaj[úu]|varia|je.*na.*obed|je)).*[v|vo]*.*(k[uú]sku|kaza[cč]ku|vul[ck][aá]n[eo]|kolib[a|e]|kolibke|milan[eo]|rmute|ba[šs]te)"
+        "(?=[cč]o.*(?=hraj[úu]|maj[úu]|d[aá]vaj[úu]|varia|je.*na.*obed|je)).*[v|vo]*.*(kari|don[ovi]|quijot[ovi|e])"
     ],
 
     // pole "vtipnych" gif obrazkov pre zobrazenie v ankete
@@ -116,29 +84,13 @@ module.exports = {
     // otazka typu "co je v kazacku" alebo "co maju vo vulkane"
     "RESTAURANTS": [
         {
-            "regex": "k[uú]sku|k[uú]sok",
-            "source": "kusokstastia"
+            "regex": "don[ovi]|quijot[ovi|e]",
+            "source": "don_quijote"
         },
         {
-            "regex": "kaza[cč]ku|kaza[cč]ok[ pub]*]",
-            "source": "kazacok"
+            "regex": "kari",
+            "source": "svadby_a_kari"
         },
-        {
-            "regex": "kolibke|kolibe",
-            "source": "smrekovakoliba"
-        },
-        {
-            "regex": "vul[ck]an[eo]",
-            "source": "vulcano"
-        },
-        {
-            "regex": "milan[oe]",
-            "source": "milano"
-        },
-        {
-            "regex": "rmut|ba[šs]t[ea]",
-            "source": "rmut"
-        }
     ],
 
     // otazka pre denne menu vsetkych restauracii
